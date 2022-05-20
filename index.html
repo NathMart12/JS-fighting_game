@@ -1,0 +1,128 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Applies style to all the elements to make sure padding doesn'r mess up the width */
+    * {
+      box-sizing: border-box;
+      font-family: "Press Start 2P", cursive;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main container, inline-block makes it so the parent div takes the full width of the children inside, in this case is the canvas -->
+  <div style="position: relative; display: inline-block">
+    <!-- Main health and timer container -->
+    <div
+      style="
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+      "
+    >
+      <!-- Player health with relative position to make sure the static div maintains an absolute position relative to it-->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          border-top: 4px solid #94a3b8;
+          border-bottom: 4px solid #94a3b8;
+          border-left: 4px solid #94a3b8;
+        "
+      >
+        <!-- Player health child-->
+        <!-- Static div to maintain elements static and just reduce the health bars -->
+        <div style="background-color: #be123c; height: 30px; width: 100%"></div>
+        <!-- Player health bar -->
+        <div
+          id="playerHealth"
+          style="
+            position: absolute;
+            background-color: #7e22ce;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+          "
+        ></div>
+      </div>
+      <!-- Timer, flex-srink is used to preserve the static width of the div -->
+      <div
+        id="timer"
+        style="
+          background-color: #0f172a;
+          height: 50px;
+          width: 100px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: 4px solid #94a3b8;
+        "
+      >
+        10
+      </div>
+
+      <!-- Enemy Health parent, with relative position -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          border-top: 4px solid #94a3b8;
+          border-right: 4px solid #94a3b8;
+          border-bottom: 4px solid #94a3b8;
+        "
+      >
+        <!-- Enemy Health child-->
+        <div style="background-color: #be123c; height: 30px"></div>
+        <!-- Enemy health bar -->
+        <div
+          id="enemyHealth"
+          style="
+            position: absolute;
+            background-color: #7e22ce;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          "
+        ></div>
+      </div>
+    </div>
+    <div
+      id="displayText"
+      style="
+        position: absolute;
+        color: aliceblue;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      "
+    >
+      Draw
+    </div>
+    <canvas></canvas>
+  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src="index.js"></script>
+</body>
