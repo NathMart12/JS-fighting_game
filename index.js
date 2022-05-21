@@ -89,8 +89,8 @@ const player = new Fighter({
       x: 80,
       y: 50,
     },
-    width: 200,
-    height: 100,
+    width: 250,
+    height: 150,
   },
 });
 
@@ -154,7 +154,7 @@ const enemy = new Fighter({
       x: -220,
       y: 75,
     },
-    width: 120,
+    width: 130,
     height: 50,
   },
 });
@@ -243,7 +243,7 @@ function anime() {
       rectangle2: enemy,
     }) &&
     player.isAttacking &&
-    player.currentFrame === 5
+    player.currentFrame === 6
   ) {
     enemy.takeHit();
     player.isAttacking = false;
@@ -254,7 +254,7 @@ function anime() {
   }
 
   // Detects lack of collision with the enemy
-  if (player.isAttacking && player.currentFrame === 5) {
+  if (player.isAttacking && player.currentFrame === 6) {
     player.isAttacking = false;
   }
 
